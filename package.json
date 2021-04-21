@@ -1,0 +1,16 @@
+{
+    "name": "mern",
+    "version": "0.0.1",
+    "proxy" : "http://localhost:4000",
+    "scripts": {
+      "client": "cd client && yarn start",
+      "server": "cd server && nodemon server.js",
+      "start": "concurrently  \"npm run server\" \"npm run client\""
+    },
+    "author": "Ankit Kanojia",
+    "license": "ISC",
+    "dependencies": {
+      "concurrently": "^4.1.0"
+    }
+  }
+  
