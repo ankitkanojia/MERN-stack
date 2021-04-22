@@ -15,7 +15,7 @@ function Login() {
             const loginUser = { username, password };
             const loginResponse = await axios.post("http://localhost:4000/auth/login", loginUser);
             localStorage.setItem("auth-token", loginResponse.data.token);
-            history.push("/users");
+            history.push("/");
         } catch (err) {
             err.response.data.msg && setError(err.response.data.msg)
         }

@@ -6,9 +6,9 @@ import Users from './Pages/user';
 
 const Main = () => (
         <Switch>
-            <Route exact path='/' component={Login}/>
+            <Route exact path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>
-            <Route exact path='/users' component={Users}/>
+            <Route exact path='/' component={Users}/>
         </Switch>
 )
 
