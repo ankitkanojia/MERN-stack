@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { useHistory } from 'react-router-dom';
 // import socketIOClient from "socket.io-client";
 // const ENDPOINT = "http://127.0.0.1:4000";
 // const socket = socketIOClient(ENDPOINT, {transports: ['websocket', 'polling', 'flashsocket']});
@@ -7,6 +8,7 @@ import axios from "axios";
 function User() {
   const [users, SetUsers] = useState();
   const [username, SetUserName] = useState('');
+  const history = useHistory();
 
   const getUsers = async () => {
     let token = localStorage.getItem("auth-token");
@@ -67,10 +69,16 @@ function User() {
       .then(function (data) { console.log(data) })
   }
 
+  const logout = () => {
+    localStorage.setItem("auth-token", "");
+    history.push("/login");
+  };
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
+         <button className="btn btn-primary mr-2" onClick={logout}>Logout</button>
           <h1 className="text-center">User List</h1>
           <hr />
           <table className="table table-dark">
