@@ -46,7 +46,7 @@ function Register() {
                             <input type="password" onChange={e => setPassword(e.target.value)} autoComplete="off" class="form-control" placeholder="Password" />
                         </div>
                         <button type="button" onClick={() => register()} class="btn btn-secondary">Register</button>&nbsp;&nbsp;
-                        <Link to={"/"}><button type="submit" class="btn btn-black">Login</button></Link>
+                        <Link to={"/login"}><button type="submit" class="btn btn-black">Login</button></Link>
                     </form>
                 </div>
             </div>
